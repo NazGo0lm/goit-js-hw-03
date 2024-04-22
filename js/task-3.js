@@ -1,28 +1,19 @@
-const profile = {
-    username: "Jacob",
-    playTime: 300,
-    changeUsername(newName) {
-        //console.log(this.username);    
-        //console.log(this.playTime);
-        
-        
-        return this.username = newName
-    },
-    updatePlayTime(hours) {
-        //console.log(this.playTime += hours)
-        return this.playTime += hours
-    },
-    getInfo() {
-         return `${this.username} has ${this.playTime} active hours!`
+function filterArray(numbers, value) {
+    //console.log(numbers);
+    let theArray = [];
+    //console.log(numbers.length);
+    for (let i = 0; i < numbers.length; i++) {
+        //console.log(numbers[i]);
+        if (numbers[i] > value) {
+            theArray.push(numbers[i]);
+        }
     }
-};
+    return theArray;
+}
 
 
-
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
-
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
-
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+ console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76] 
